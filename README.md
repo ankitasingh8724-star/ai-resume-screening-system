@@ -1,49 +1,52 @@
 # AI Resume Screening System
 
-Python app that extracts text from resumes (PDF or TXT), normalizes it, surfaces skills via a keyword lexicon, and scores each resume against a job description using **TF-IDF** and **cosine similarity**. A **Streamlit** dashboard shows match scores, extracted skills, and a **ranked** candidate list.
+## Project Overview
 
-## Project layout
+This project uses Machine Learning and NLP to analyze resumes and match them with job descriptions. It calculates similarity scores and helps recruiters shortlist candidates.
+
+## Features
+
+- Upload resume
+- Extract skills from resume
+- Compare with job description
+- Generate match score
+- Ranking system
+- Web interface using Streamlit
+
+## Tech Stack
+
+- Python
+- Machine Learning
+- NLP
+- Scikit-learn
+- Streamlit
+- Pandas
+- NumPy
+
+## How to Run
+
+1. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Run the application:
+
+   ```bash
+   streamlit run app.py
+   ```
+
+## Project Structure
 
 ```
-resume-screening-ai/   # or your repo root
-├── app.py             # Streamlit entrypoint
-├── requirements.txt
-├── data/
-│   └── skills_keywords.txt   # editable skill phrases (optional; defaults exist)
-├── models/            # reserved for saved models / vectorizers
-└── src/
-    ├── extract_text.py
-    ├── preprocess.py
-    ├── skills.py
-    └── matcher.py
+data/
+models/
+src/
+app.py
+requirements.txt
 ```
 
-## Setup
+## Live Demo
 
-```bash
-cd "/path/to/AI resume screening system"
-python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-## Run the dashboard
-
-```bash
-streamlit run app.py
-```
-
-1. Paste a **job description**.
-2. Upload one or more **PDF** or **TXT** resumes.
-3. Click **Add uploads to queue** (repeat if needed).
-4. Click **Run screening** to see similarity scores, skills, and ranking.
-
-## Notes
-
-- PDF text uses **pdfminer.six** first, then **PyPDF2** as a fallback.
-- Skill extraction is **lexicon-based** (NLP-style normalization + phrase matching). Extend `data/skills_keywords.txt` for your domain.
-- Matching uses **scikit-learn** `TfidfVectorizer` (1–2 grams, English stop words) and **cosine similarity** between the job description and each resume in a shared vector space.
-
-## Requirements
-
-- Python 3.10+ recommended
+Coming soon (will deploy on Streamlit)
