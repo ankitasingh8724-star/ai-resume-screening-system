@@ -49,4 +49,4 @@ requirements.txt
 
 ## Live Demo
 
-Coming soon (will deploy on Streamlit)
+https://ai-resume-screening-system-65cdkprzkepsnmq6yfsqkt.streamlit.app/
